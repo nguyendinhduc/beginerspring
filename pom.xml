@@ -7,6 +7,7 @@
     <groupId>beginerspring</groupId>
     <artifactId>beginerspring</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
 
     <parent>
@@ -36,35 +37,35 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>3.0.4.RELEASE</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-jdbc</artifactId>-->
+            <!--<version>3.0.4.RELEASE</version>-->
+        <!--</dependency>-->
 
-        <!--JOOQ-->
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq</artifactId>
-            <version>3.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-meta</artifactId>
-            <version>3.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq-codegen</artifactId>
-            <version>3.9.2</version>
-        </dependency>
+        <!--&lt;!&ndash;JOOQ&ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.jooq</groupId>-->
+            <!--<artifactId>jooq</artifactId>-->
+            <!--<version>3.9.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.jooq</groupId>-->
+            <!--<artifactId>jooq-meta</artifactId>-->
+            <!--<version>3.9.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.jooq</groupId>-->
+            <!--<artifactId>jooq-codegen</artifactId>-->
+            <!--<version>3.9.2</version>-->
+        <!--</dependency>-->
 
         <!--msql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<version>6.0.6</version>-->
+        <!--</dependency>-->
 
 
         <!--<dependency>-->
@@ -86,11 +87,14 @@
         <!--<artifactId>jackson-datatype-jsr310</artifactId>-->
         <!--<version>2.9.2</version>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.2.2</version>
-        </dependency>
+
+
+
+        <!--<dependency>-->
+            <!--<groupId>commons-dbcp</groupId>-->
+            <!--<artifactId>commons-dbcp</artifactId>-->
+            <!--<version>1.2.2</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 
@@ -101,120 +105,120 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen-maven</artifactId>
-                <version>3.9.2</version>
+            <!--<plugin>-->
+                <!--<groupId>org.jooq</groupId>-->
+                <!--<artifactId>jooq-codegen-maven</artifactId>-->
+                <!--<version>3.9.2</version>-->
 
-                <!-- The plugin should hook into the generate goal -->
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--&lt;!&ndash; The plugin should hook into the generate goal &ndash;&gt;-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>generate</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
 
-                <dependencies/>
+                <!--<dependencies/>-->
 
-                <configuration>
-                    <jdbc>
-                        <driver>${jdbc.driver}</driver>
-                        <url>${jdbc.url}</url>
-                        <user>${jdbc.user}</user>
-                        <password>${jdbc.password}</password>
-                    </jdbc>
+                <!--<configuration>-->
+                    <!--<jdbc>-->
+                        <!--<driver>${jdbc.driver}</driver>-->
+                        <!--<url>${jdbc.url}</url>-->
+                        <!--<user>${jdbc.user}</user>-->
+                        <!--<password>${jdbc.password}</password>-->
+                    <!--</jdbc>-->
 
-                    <generator>
-                        <name>org.jooq.util.JavaGenerator</name>
-                        <database>
+                    <!--<generator>-->
+                        <!--<name>org.jooq.util.JavaGenerator</name>-->
+                        <!--<database>-->
 
-                            <name>org.jooq.util.mysql.MySQLDatabase</name>
-                            <includes>.*</includes>
-                            <excludes></excludes>
-                            <inputSchema>demo</inputSchema>
+                            <!--<name>org.jooq.util.mysql.MySQLDatabase</name>-->
+                            <!--<includes>.*</includes>-->
+                            <!--<excludes></excludes>-->
+                            <!--<inputSchema>demo</inputSchema>-->
 
 
-                            <!--&lt;!&ndash;customtype&ndash;&gt;-->
-                            <!--<customTypes>-->
-                                <!--<customType>-->
-                                    <!--<name>com.uet.fingerpinter.jooq.type.TypeFingerprinterInfo</name>-->
-                                    <!--<converter>com.uet.fingerpinter.jooq.convert.TypeFingerprinterInfoConvertter-->
-                                    <!--</converter>-->
-                                <!--</customType>-->
+                            <!--&lt;!&ndash;&lt;!&ndash;customtype&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<customTypes>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<customType>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<name>com.uet.fingerpinter.jooq.type.TypeFingerprinterInfo</name>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<converter>com.uet.fingerpinter.jooq.convert.TypeFingerprinterInfoConvertter&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</converter>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</customType>&ndash;&gt;-->
 
-                                <!--&lt;!&ndash;local datetime&ndash;&gt;-->
-                                <!--<customType>-->
-                                    <!--<name>java.time.LocalDateTime</name>-->
-                                    <!--<converter>com.uet.fingerpinter.jooq.convert.LocalDateTimeConverter-->
-                                    <!--</converter>-->
-                                <!--</customType>-->
+                                <!--&lt;!&ndash;&lt;!&ndash;local datetime&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<customType>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<name>java.time.LocalDateTime</name>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<converter>com.uet.fingerpinter.jooq.convert.LocalDateTimeConverter&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</converter>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</customType>&ndash;&gt;-->
 
-                            <!--</customTypes>-->
+                            <!--&lt;!&ndash;</customTypes>&ndash;&gt;-->
 
-                            <!--<forcedTypes>-->
-                                <!--&lt;!&ndash;fingerprinter_info_detail&ndash;&gt;-->
-                                <!--<forcedType>-->
-                                    <!--<name>com.uet.fingerpinter.jooq.type.TypeFingerprinterInfo</name>-->
-                                    <!--<expression>.*\.fingerprinter_info_detail\.type</expression>-->
-                                <!--</forcedType>-->
+                            <!--&lt;!&ndash;<forcedTypes>&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash;fingerprinter_info_detail&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<forcedType>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<name>com.uet.fingerpinter.jooq.type.TypeFingerprinterInfo</name>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<expression>.*\.fingerprinter_info_detail\.type</expression>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</forcedType>&ndash;&gt;-->
 
-                                <!--&lt;!&ndash;session tracking&ndash;&gt;-->
-                                <!--<forcedType>-->
-                                    <!--<name>java.time.LocalDateTime</name>-->
-                                    <!--<expression>.*\.session_tracking\..*_time</expression>-->
-                                <!--</forcedType>-->
+                                <!--&lt;!&ndash;&lt;!&ndash;session tracking&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<forcedType>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<name>java.time.LocalDateTime</name>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<expression>.*\.session_tracking\..*_time</expression>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</forcedType>&ndash;&gt;-->
 
-                                <!--&lt;!&ndash;tracking&ndash;&gt;-->
-                                <!--<forcedType>-->
-                                    <!--<name>java.time.LocalDateTime</name>-->
-                                    <!--<expression>.*\.tracking\..*_time</expression>-->
-                                <!--</forcedType>-->
+                                <!--&lt;!&ndash;&lt;!&ndash;tracking&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<forcedType>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<name>java.time.LocalDateTime</name>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<expression>.*\.tracking\..*_time</expression>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</forcedType>&ndash;&gt;-->
 
-                            <!--</forcedTypes>-->
+                            <!--&lt;!&ndash;</forcedTypes>&ndash;&gt;-->
 
-                        </database>
+                        <!--</database>-->
 
-                        <target>
-                            <packageName>com.ducnd.beginer.db</packageName>
-                            <directory>src/main/java</directory>
-                        </target>
-                    </generator>
-                </configuration>
-            </plugin>
+                        <!--<target>-->
+                            <!--<packageName>com.ducnd.beginer.db</packageName>-->
+                            <!--<directory>src/main/java</directory>-->
+                        <!--</target>-->
+                    <!--</generator>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.5.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <systemProperties>
-                        <systemProperty>
-                            <key>jdbc.driver</key>
-                            <value>${jdbc.driver}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <key>jdbc.user</key>
-                            <value>${jdbc.user}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <key>jdbc.password</key>
-                            <value>${jdbc.password}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <key>jdbc.url</key>
-                            <value>${jdbc.url}</value>
-                        </systemProperty>
-                    </systemProperties>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>exec-maven-plugin</artifactId>-->
+                <!--<version>1.5.0</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>exec</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<systemProperties>-->
+                        <!--<systemProperty>-->
+                            <!--<key>jdbc.driver</key>-->
+                            <!--<value>${jdbc.driver}</value>-->
+                        <!--</systemProperty>-->
+                        <!--<systemProperty>-->
+                            <!--<key>jdbc.user</key>-->
+                            <!--<value>${jdbc.user}</value>-->
+                        <!--</systemProperty>-->
+                        <!--<systemProperty>-->
+                            <!--<key>jdbc.password</key>-->
+                            <!--<value>${jdbc.password}</value>-->
+                        <!--</systemProperty>-->
+                        <!--<systemProperty>-->
+                            <!--<key>jdbc.url</key>-->
+                            <!--<value>${jdbc.url}</value>-->
+                        <!--</systemProperty>-->
+                    <!--</systemProperties>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 
